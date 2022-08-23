@@ -1,0 +1,203 @@
+@use "../../global" as g;
+
+/*!
+page > top > flow
+------------------------------
+*/
+.flow {
+  background-color: var(--color-bg-primary-light);
+  margin-top: 48px;
+  // z-index: 5;
+}
+
+.flow .l-container {
+  padding-bottom: 160px;
+
+  @include g.sp() {
+    padding-bottom: 0;
+  }
+}
+
+.flow__title {
+  transform: translateY(-48px);
+}
+
+.flow__inner {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 80px;
+
+  @include g.mq() {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  @include g.mq(lg) {
+    gap: 48px;
+  }
+}
+
+.card {
+  background-color: var(--color-bg-base);
+  padding: 2rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 8px grey;
+
+}
+
+.card-one {
+  position: relative;
+  opacity: 0;
+  transition: .7s;
+  transform: translateY(20px);
+
+  @include g.sp() {
+    &.appear-sp {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+.card-one.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card-one::after {
+  @include g.sp() {
+    background-size: 20%;
+    left: 0;
+    top: -15%;
+  }
+
+  content: "";
+  position: absolute;
+  background-image: url(https://web.haresan.com/create/1.svg);
+  background-repeat: no-repeat;
+  background-size: 30%;
+  width: 100%;
+  height: 100%;
+  top: -15%;
+  left: -13%;
+  display: block;
+  opacity: .3;
+}
+
+.card-two {
+  position: relative;
+  opacity: 0;
+  transition: .7s;
+  transform: translateY(20px);
+
+  @include g.sp() {
+    &.appear-sp {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  &.appear {
+    @include g.mq() {
+      opacity: 1;
+      transform: translateY(80px);
+    }
+  }
+
+  @include g.mq() {
+    transform: translateY(100px);
+  }
+}
+
+.card-two::after {
+  @include g.sp() {
+    background-size: 20%;
+    left: 0;
+    top: -15%;
+  }
+
+  content: "";
+  position: absolute;
+  background-image: url(https://web.haresan.com/create/2.svg);
+  background-repeat: no-repeat;
+  background-size: 30%;
+  width: 100%;
+  height: 100%;
+  top: -15%;
+  left: -13%;
+  display: block;
+  opacity: .3;
+}
+
+.card-three {
+  position: relative;
+  opacity: 0;
+  transition: .7s;
+  transform: translateY(20px);
+
+  @include g.sp() {
+    &.appear-sp {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  &.appear {
+    @include g.mq() {
+      opacity: 1;
+      transform: translateY(160px);
+    }
+  }
+
+  @include g.mq() {
+    transform: translateY(180px);
+  }
+}
+
+.card-three::after {
+  @include g.sp() {
+    background-size: 20%;
+    left: 0;
+    top: -15%;
+  }
+
+  content: "";
+  position: absolute;
+  background-image: url(https://web.haresan.com/create/3.svg);
+  background-repeat: no-repeat;
+  background-size: 30%;
+  width: 100%;
+  height: 100%;
+  top: -15%;
+  left: -13%;
+  display: block;
+  opacity: .3;
+}
+
+.card__title {
+  text-align: center;
+  padding-bottom: .5rem;
+  border-bottom: 2px solid var(--color-bg-primary);
+}
+
+.card__text {
+  margin: 1rem 0;
+}
+
+.card__thumb {
+  margin-top: auto;
+}
+
+// .card__thumb img {
+//   position: relative;
+// }
+// .card__thumb img::before {
+//   padding-top: 66%;
+//   width: 100%;
+//   height: 100%;
+//   position: absolute;
+// }
+.flow__button {
+  text-align: center;
+}

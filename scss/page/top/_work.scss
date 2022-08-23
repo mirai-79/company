@@ -1,0 +1,95 @@
+@use "../../global" as g;
+
+/*!
+page > top > work
+------------------------------
+*/
+.work__frame {
+  background-color: var(--color-bg-primary-light);
+  // margin: 32px 0;
+  // @include g.mq() {
+  //     margin: 48px 0;
+  // }
+}
+.work .l-container {
+  @include g.mq() {
+      margin-top: 172px;
+  }
+}
+@media screen and (min-width: 912px), print {
+  .work .l-container {
+    margin-top: 120px;
+  }
+}
+@media screen and (min-width: 1080px), print {
+  .work .l-container {
+    margin-top: 0;
+  }
+}
+.work.l-section {
+  padding-bottom: 48px;
+}
+.work__inner {
+  padding: 32px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+  @include g.mq() {
+      flex-direction: row-reverse;
+      gap: 32px;
+      padding: 48px 0;
+  }
+  &--reverse {
+    padding: 0;
+    @include g.mq() {
+        flex-direction: row;
+    }
+  }
+}
+.work__body {
+  @include g.mq() {
+    width: 60%;
+  }
+}
+.work__text {
+  margin-top: 24px;
+}
+.work__chart {
+  @include g.mq() {
+      width: 40%;
+  }
+}
+.ct-label {
+  font-size: .8rem;
+  fill: var(--color-font-white);
+}
+.ct-series-a .ct-slice-pie {
+  fill: #30665c;
+}
+.ct-series-b .ct-slice-pie {
+  fill: #57BDAA;
+}
+.ct-series-c .ct-slice-pie {
+  fill: #5284aa;
+}
+.ct-series-d .ct-slice-pie {
+  fill: #80beee;
+}
+.ct-series-e .ct-slice-pie {
+  fill: #a6d5fa;
+}
+
+.work__bar-chart {
+  @include g.mq() {
+      width: 40%;
+  }
+}
+.ct-series-a .ct-bar {
+  stroke: #57BDAA;
+  stroke-width: 10%;
+}
+.work__chart-name {
+  text-align: center;
+  margin-top: 1rem;
+}

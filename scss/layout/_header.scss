@@ -1,0 +1,92 @@
+@use "../global" as g;
+
+/*!
+layout > header
+------------------------------
+*/
+.header {
+  background-color: var(--color-bg-primary-light);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+}
+
+.header__inner {
+  display: flex;
+  padding: .5rem 0;
+  // padding: 0.3em 0;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.header__logo img {
+  height: 40px;
+}
+
+.nav__list {
+  display: flex;
+}
+.nav__list {
+  display: flex;
+  gap: 1rem;
+  @include g.mq() {
+      gap: 2rem;
+  }
+}
+.nav__item {
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  position: relative;
+  transition: .3s;
+  @include g.mq() {
+      flex-direction: row;
+      align-items: center;
+      font-size: 16px;
+  }
+  &--home::before {
+    content: '\e88a';
+  }
+  &--offering::before {
+    content: '\e54e';
+  }
+  &--entry::before {
+    content: '\e163';
+  }
+}
+@include g.ho() {
+  .nav__item:hover::after {
+    position: absolute;
+    animation:  borderanime .2s forwards;
+    height: 3px;
+    background-color: var(--color-bg-primary);
+    content: "";
+    display: block;
+    bottom: -10%;
+    @include g.sp() {
+        bottom: -15%;
+    }
+  }
+}
+.nav__item::before {
+  padding-right: .5rem;
+  font-family: 'Material Icons Round';
+  font-size: 32px;
+  line-height: 1;
+  color: var(--color-bg-primary);
+}
+
+@keyframes borderanime {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 50%;
+  }
+  100% {
+    width: 100%;
+  }
+}
